@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas PBI Luar Sekolah | I Putu Sukma Widyantara</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="style_3.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="icon" href="img/logo(1).ico" type="image/x-icon" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="menu-btn">
+        <i data-feather="menu"></i>
+    </div>
+    <div class="container">
+        <!-- Navbar -->
+        <header>
+            <nav class="main-nav">
+                <h2>ArchiShop</h2>
+
+                <ul class="main-menu">
+                    <li><a href="tugas.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="content.html">Content</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="helpdesk.html">Help Desk</a></li>
+                </ul>
+
+                <form class="search-form" onsubmit="handleSearch(event)">
+                    <input type="text" id="searchInput" placeholder="Cari produk...">
+                    <a href="#" class="search-link" onclick="handleSearch(event)">
+                        <i data-feather="search"></i>
+                    </a>
+                </form>
+
+                <ul class="right-menu">
+                    <li><a href=""><i data-feather="shopping-cart"></i></a></li>
+                    <li><a href=""><i data-feather="shopping-bag"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="loader-wrapper">
+            <div class="loader"></div>
+        </div>
+       
+        <!-- Form -->
+        <div class="page-wrapper">
+            <div class="form-container">
+                <form id="helpDeskForm">
+                    <h1>Formulir Help Desk</h1>
+
+                    <div class="form-group">
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama anda" required>
+                    <span class="error-msg" id="namaError"></span>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="email">Alamat Email:</label>
+                    <input type="email" id="email" name="email" placeholder="contoh@gmail.com" required>
+                    <span class="error-msg" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="subjek">Subjek:</label>
+                    <input type="text" id="subjek" name="subjek" placeholder="Masukkan subjek anda" required>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="masalah">Deskripsikan Masalah Anda:</label>
+                    <textarea id="masalah" name="masalah" rows="5" placeholder="Tuliskan masalah yang Anda alami..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="lampiran">Upload File (jika ada):</label>
+                    <input type="file" id="lampiran" name="lampiran" accept="image/*,.pdf">
+                    </div>
+
+                    <button type="submit">Kirim</button>
+                    <p id="successMessage" class="success-msg" style="display:none;">✅ Laporan berhasil dikirim!</p>
+                </form>
+            </div>
+        </div>
+
+
+         <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-top">
+                <div class="footer-brand">
+                    <h2>ArchiShop</h2>
+                    <p>Inspirasi Desain Rumah Impian Anda</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links</h3>
+                    <ul>
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Kontak</a></li>
+                    <li><a href="#">Privasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-socials">
+                    <h3>Ikuti Kami</h3>
+                    <a href="#"><i data-feather="instagram"></i></a>
+                    <a href="#"><i data-feather="facebook"></i></a>
+                    <a href="#"><i data-feather="twitter"></i></a>
+                </div>
+                </div>
+                <div class="footer-bottom">
+                <p>&copy; 2025 I Putu Sukma Widyantara. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>  
+</body>
+    <script>
+      feather.replace();
+    </script>
+
+     <script>
+        window.addEventListener('load', function() {
+            const loaderWrapper = document.querySelector('.loader-wrapper');
+            const mainContent = document.querySelector('.konten-utama');
+            loaderWrapper.classList.add('loader-hidden');
+            mainContent.style.display = 'block';
+            loaderWrapper.addEventListener('transitionend', function() {
+                loaderWrapper.remove();
+            });
+        });
+
+
+        document.getElementById('helpDeskForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+                const nama = document.getElementById('nama').value;
+                const email = document.getElementById('email').value;
+                const subjek = document.getElementById('subjek').value;
+                const masalah = document.getElementById('masalah').value;
+
+                alert('Data Anda telah berhasil disimpan!');
+
+                document.getElementById('helpDeskForm').reset();
+        });
+
+        document.getElementById("helpDeskForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nama = document.getElementById("nama").value.trim();
+        const email = document.getElementById("email").value.trim();
+        let valid = true;
+
+        document.getElementById("namaError").textContent = "";
+        document.getElementById("emailError").textContent = "";
+
+        if (nama === "") {
+            document.getElementById("namaError").textContent = "Nama tidak boleh kosong.";
+            valid = false;
+        }
+
+        if (!validateEmail(email)) {
+            document.getElementById("emailError").textContent = "Email tidak valid.";
+            valid = false;
+        }
+
+        if (valid) {
+            document.getElementById("successMessage").style.display = "block";
+            setTimeout(() => {
+            document.getElementById("successMessage").style.display = "none";
+            document.getElementById("helpDeskForm").reset();
+            }, 3000);
+        }
+        });
+
+        function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+        }
+    </script>
+    <script src="navbar.js"></script>
+</html>

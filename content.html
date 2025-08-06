@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas PBI Luar Sekolah | I Putu Sukma Widyantara</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="style_2.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="icon" href="img/logo(1).ico" type="image/x-icon" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="menu-btn">
+        <i data-feather="menu"></i>
+    </div>
+    <div class="container">
+        <!-- Navbar -->
+        <header>
+            <nav class="main-nav">
+                <h2>ArchiShop</h2>
+
+                <ul class="main-menu">
+                    <li><a href="tugas.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="content.html">Content</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="helpdesk.html">Help Desk</a></li>
+                </ul>
+                
+                <form class="search-form" onsubmit="handleSearch(event)">
+                    <input type="text" id="searchInput" placeholder="Cari produk...">
+                    <a href="#" class="search-link" onclick="handleSearch(event)">
+                        <i data-feather="search"></i>
+                    </a>
+                </form>
+
+                <ul class="right-menu">
+                    <li><a href=""><i data-feather="shopping-cart"></i></a></li>
+                    <li><a href=""><i data-feather="shopping-bag"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- hero -->
+        <div class="hero-container">
+            <video autoplay muted loop>
+            <source src="video/video.mp4" type="video/mp4" />
+            Browser Anda tidak mendukung video tag.
+            </video>
+            <div class="overlay"></div>
+            <div class="hero-content">
+            <h1>Explore Ideas With Us</h1>
+            <p>Mewujudkan ide menjadi kenyataan.</p>
+            </div>
+        </div>
+
+        <!-- Banner -->
+         <section class="banner">
+
+         </section>
+
+          <!-- Cards 1 -->
+           <section class="home-cards">
+                <div class="card">
+                    <img src="img/s2.jpg" alt="">
+                    <div class="isi">
+                        <h3>House Design</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facilis consequatur ad adipisci quaerat nesciunt.
+                        </p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="img/s3.jpg" alt="">
+                    <div class="isi">
+                        <h3>House Design</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facilis consequatur ad adipisci quaerat nesciunt.
+                        </p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="img/s4.jpg" alt="">
+                   <div class="isi">
+                        <h3>House Design</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facilis consequatur ad adipisci quaerat nesciunt.
+                        </p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+           </section>
+
+           <!-- Cards 2 -->
+            <section class="home-cards">
+                <div class="card">
+                    <img src="img/s5.jpg" alt="">
+                    <div class="isi">
+                        <h3>Hospital Design</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facilis consequatur ad adipisci quaerat nesciunt.
+                        </p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="img/s6.jpg" alt="">
+                    <div class="isi">
+                        <h3>School Design</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facilis consequatur ad adipisci quaerat nesciunt.
+                        </p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="img/s7.jpg" alt="">
+                   <div class="isi">
+                        <h3>Bridge Design</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facilis consequatur ad adipisci quaerat nesciunt.
+                        </p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+           </section>
+
+           <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="footer-top">
+                    <div class="footer-brand">
+                        <h2>ArchiShop</h2>
+                        <p>Inspirasi Desain Rumah Impian Anda</p>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Links</h3>
+                        <ul>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Kontak</a></li>
+                        <li><a href="#">Privasi</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-socials">
+                        <h3>Ikuti Kami</h3>
+                        <a href="#"><i data-feather="instagram"></i></a>
+                        <a href="#"><i data-feather="facebook"></i></a>
+                        <a href="#"><i data-feather="twitter"></i></a>
+                    </div>
+                    </div>
+                    <div class="footer-bottom">
+                    <p>&copy; 2025 I Putu Sukma Widyantara. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+
+            <div class="loader-wrapper">
+                <div class="loader"></div>
+            </div>
+       
+    </div>  
+</body>
+    <script>
+      feather.replace();
+    </script>
+
+     <script>
+        window.addEventListener('load', function() {
+            const loaderWrapper = document.querySelector('.loader-wrapper');
+            const mainContent = document.querySelector('.konten-utama');
+            loaderWrapper.classList.add('loader-hidden');
+            mainContent.style.display = 'block';
+            loaderWrapper.addEventListener('transitionend', function() {
+                loaderWrapper.remove();
+            });
+        });
+    </script>
+    <script src="navbar.js"></script>
+</html>

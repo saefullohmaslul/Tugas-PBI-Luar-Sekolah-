@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas PBI Luar Sekolah | I Putu Sukma Widyantara</title>
+    <link rel="stylesheet" href="style_1.css">
+    <link rel="icon" href="img/logo(1).ico" type="image/x-icon" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="latar">
+
+        </div>
+        <div class="form">
+                <div class="form-container">
+                    <h2>Login</h2>
+                    <form action="#" method="post">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap" required />
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan Sandi" required />
+
+
+                    <a href="tugas.html">
+                        <button type="button">Kirim</button>
+                    </a>
+
+                    </form>
+                </div>
+            
+                      
+                <div class="loader-wrapper">
+                    <div class="loader"></div>
+                </div>
+        </div>
+    </div>
+</body>
+    <script>
+      feather.replace();
+    </script>
+
+    <script>
+        window.addEventListener('load', function() {
+            const loaderWrapper = document.querySelector('.loader-wrapper');
+            const mainContent = document.querySelector('.konten-utama');
+            loaderWrapper.classList.add('loader-hidden');
+            mainContent.style.display = 'block';
+            loaderWrapper.addEventListener('transitionend', function() {
+                loaderWrapper.remove();
+            });
+        });
+    </script>
+</html>
